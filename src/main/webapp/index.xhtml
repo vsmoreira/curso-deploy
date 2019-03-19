@@ -35,7 +35,8 @@
             <h:outputLabel styleClass="bold" for="nome"
                 value="Digite seu nome:" />
             <h:inputText id="nome" value="#{helloWorld.name}" />
-            <h:commandButton value="Processar" update="nome-invertido" />
+            <h:inputText id="sobrenome" value="#{helloWorld.lastName}" />
+            <h:commandButton value="Processar" update="nome-invertido nome-jedi" />
             <h:commandButton value="Limpar"
                 action="#{helloWorld.clean()}"
                 update="nome nome-invertido" />
@@ -45,6 +46,11 @@
                 value="Seu nome invertido é:" />
             <h:outputText id="nome-invertido"
                 value="#{helloWorld.nameReversed}" />
+
+            <h:outputLabel for="nome-jedi"
+                value="Seu nome Jedi é:" />
+            <h:outputText id="nome-jedi"
+                value="#{helloWorld.jediName}" />
         </div>
     </h:form>
 </body>
