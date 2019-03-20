@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>br.mp.mpu.escola</groupId>
     <artifactId>curso-deploy</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>2.0</version>
     <packaging>war</packaging>
     <name>Deploy Automatizado</name>
     <description>Curso de deploy automatizado e padrões de qualidade</description>
@@ -39,8 +39,14 @@
             <artifactId>primefaces</artifactId>
             <version>7.0.RC3</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports -->
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports</artifactId>
+            <version>6.7.0</version>
+        </dependency>
     </dependencies>
-    
+
     <repositories>
         <repository>
             <id>prime-repo</id>
@@ -48,9 +54,9 @@
             <url>http://repository.primefaces.org</url>
         </repository>
     </repositories>
-    
+
     <build>
-        <finalName>${project.artifactId}</finalName>
+        <finalName>${project.artifactId}-${project.version}</finalName>
     </build>
 
 </project>

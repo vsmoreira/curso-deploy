@@ -4,9 +4,21 @@
 <h:head>
     <title>Curso de Deploy</title>
     <style type="text/css">
-body { background-image: url("img/cream-pixels.png"); }
+body {
+    background-image: url("img/cream-pixels.png");
+}
+
 .bold {
     font-weight: bold;
+}
+
+#content {
+    margin: 0 auto;
+    width: 960px;
+    border: 1px solid black;
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 100px;
 }
 
 #titulo {
@@ -29,34 +41,38 @@ body { background-image: url("img/cream-pixels.png"); }
     margin-left: 10px;
     text-transform: capitalize;
 }
-
 #resultado
 </style>
 </h:head>
 <h:body>
-    <h2 id="titulo">#{helloWorld.greetings()}</h2>
-    <h:form id="formulario">
-        <h:panelGrid columns="4" cellpadding="5">
-            <h:outputLabel styleClass="bold" for="nome"
-                value="Digite seu nome:" />
-            <p:inputText id="nome" placeholder="Primeiro nome" value="#{helloWorld.name}" />
-            <p:inputText id="sobrenome" placeholder="Último nome" value="#{helloWorld.lastName}" />
-            <p:commandButton value="Processar"
-                update="nome-invertido nome-jedi" />
-            <p:commandButton value="Limpar"
-                action="#{helloWorld.clean()}"
-                update="nome nome-invertido" />
-        </h:panelGrid>
-        <div class="resultado">
-            <h:outputLabel for="nome-invertido"
-                value="Seu nome invertido é:" />
-            <h:outputText id="nome-invertido"
-                value="#{helloWorld.nameReversed}" />
-        </div>
-        <div class="resultado">
-            <h:outputLabel for="nome-jedi" value="Seu nome Jedi é:" />
-            <h:outputText id="nome-jedi" value="#{helloWorld.jediName}" />
-        </div>
-    </h:form>
+    <div id="content">
+        <h2 id="titulo">#{helloWorld.greetings()}</h2>
+        <h:form id="formulario">
+            <h:panelGrid columns="4" cellpadding="5">
+                <h:outputLabel styleClass="bold" for="nome"
+                    value="Digite seu nome:" />
+                <p:inputText id="nome" placeholder="Primeiro nome"
+                    value="#{helloWorld.name}" />
+                <p:inputText id="sobrenome" placeholder="Último nome"
+                    value="#{helloWorld.lastName}" />
+                <p:commandButton value="Processar"
+                    update="nome-invertido nome-jedi" />
+                <p:commandButton value="Limpar"
+                    action="#{helloWorld.clean()}"
+                    update="nome nome-invertido" />
+            </h:panelGrid>
+            <div class="resultado">
+                <h:outputLabel for="nome-invertido"
+                    value="Seu nome invertido é:" />
+                <h:outputText id="nome-invertido"
+                    value="#{helloWorld.nameReversed}" />
+            </div>
+            <div class="resultado">
+                <h:outputLabel for="nome-jedi" value="Seu nome Jedi é:" />
+                <h:outputText id="nome-jedi"
+                    value="#{helloWorld.jediName}" />
+            </div>
+        </h:form>
+    </div>
 </h:body>
 </html>
