@@ -1,8 +1,10 @@
 <html xmlns="http://www.w3c.org/1999/xhtml"
-    xmlns:h="http://xmlns.jcp.org/jsf/html">
-<head>
-<title>Curso de Deploy</title>
-<style type="text/css">
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Curso de Deploy</title>
+    <style type="text/css">
+body { background-image: url("img/cream-pixels.png"); }
 .bold {
     font-weight: bold;
 }
@@ -17,35 +19,44 @@
     margin: auto;
 }
 
-#resultado {
+.resultado {
     font-weight: bold;
     margin-top: 20px;
 }
 
-#resultado span {
+.resultado span {
     color: red;
     margin-left: 10px;
+    text-transform: capitalize;
 }
+
+#resultado
 </style>
-</head>
-<body>
+</h:head>
+<h:body>
     <h2 id="titulo">#{helloWorld.greetings()}</h2>
     <h:form id="formulario">
         <h:panelGrid columns="4" cellpadding="5">
             <h:outputLabel styleClass="bold" for="nome"
                 value="Digite seu nome:" />
-            <h:inputText id="nome" value="#{helloWorld.name}" />
-            <h:commandButton value="Processar" update="nome-invertido" />
-            <h:commandButton value="Limpar"
+            <p:inputText id="nome" placeholder="Primeiro nome" value="#{helloWorld.name}" />
+            <p:inputText id="sobrenome" placeholder="Último nome" value="#{helloWorld.lastName}" />
+            <p:commandButton value="Processar"
+                update="nome-invertido nome-jedi" />
+            <p:commandButton value="Limpar"
                 action="#{helloWorld.clean()}"
                 update="nome nome-invertido" />
         </h:panelGrid>
-        <div id="resultado">
+        <div class="resultado">
             <h:outputLabel for="nome-invertido"
                 value="Seu nome invertido é:" />
             <h:outputText id="nome-invertido"
                 value="#{helloWorld.nameReversed}" />
         </div>
+        <div class="resultado">
+            <h:outputLabel for="nome-jedi" value="Seu nome Jedi é:" />
+            <h:outputText id="nome-jedi" value="#{helloWorld.jediName}" />
+        </div>
     </h:form>
-</body>
+</h:body>
 </html>
