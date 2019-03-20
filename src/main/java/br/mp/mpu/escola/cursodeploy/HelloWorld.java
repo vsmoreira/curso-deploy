@@ -35,14 +35,20 @@ public class HelloWorld {
     }
 
     public String getJediName() {
-        if(this.jediName == null) {
+        if(this.jediName == null || this.jediName == "") {
             this.setJediName(name, lastName);
         }
         return jediName;
     }
 
     public void setJediName(String name, String lastName) {
-        this.jediName = lastName.substring(0,3) + name.substring(0,2);
+        try {
+            this.jediName = (lastName.substring(0,3) + name.substring(0,2));
+        } catch (NullPointerException e) {
+            // TODO: handle exception
+            this.jediName = "";
+        }
+        
     }
 
     public String getLastName() {
