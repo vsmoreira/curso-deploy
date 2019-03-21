@@ -18,7 +18,7 @@ public class HelloWorld {
     }
 
     public void clean() {
-        this.name = this.nameReversed = "";
+        this.name = this.nameReversed = this.lastName = this.jediName = "";
     }
 
     public String getName() {
@@ -29,33 +29,30 @@ public class HelloWorld {
         this.name = name;
         this.nameReversed = StringUtils.reverse(name);
     }
+    
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.setJediName(this.name, lastName);
+        this.lastName = lastName;
+    }
 
     public String getNameReversed() {
         return nameReversed;
     }
 
     public String getJediName() {
-        if(this.jediName == null || this.jediName == "") {
-            this.setJediName(name, lastName);
-        }
         return jediName;
     }
 
     public void setJediName(String name, String lastName) {
         try {
             this.jediName = (lastName.substring(0,3) + name.substring(0,2));
-        } catch (NullPointerException e) {
-            // TODO: handle exception
+        } catch (Exception e) {
             this.jediName = "";
         }
         
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 }
