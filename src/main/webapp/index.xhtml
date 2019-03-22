@@ -42,7 +42,22 @@ body {
     margin-left: 10px;
     text-transform: capitalize;
 }
-#resultado
+
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: gray;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+}
+
+#footer-content {
+    vertical-align: middle;
+    line-height: 10px;
+}
 </style>
 </h:head>
 <h:body>
@@ -60,7 +75,8 @@ body {
                     value="#{helloWorld.lastName}" />
                 <div>
                     <p:commandButton value="Processar"
-                        update="nome-invertido nome-jedi" icon="pi pi-check" />
+                        update="nome-invertido nome-jedi"
+                        icon="pi pi-check" />
                     <p:commandButton value="Limpar"
                         action="#{helloWorld.clean()}"
                         update="nome sobrenome nome-invertido nome-jedi"
@@ -80,6 +96,9 @@ body {
                     value="#{helloWorld.jediName}" />
             </div>
         </h:form>
+    </div>
+    <div id="footer">
+        <p id="footer-content">#{properties.versao} | &#169; ESMPU</p>
     </div>
 </h:body>
 </html>
