@@ -43,12 +43,25 @@
 
     <repositories>
         <repository>
-            <id>prime-repo</id>
-            <name>PrimeFaces Maven Repository</name>
-            <url>http://repository.primefaces.org</url>
+            <id>central</id>
+            <name>Local Artifactory Lib Releases</name>
+            <url>http://10.45.124.20:8081/artifactory/libs-release/</url>
         </repository>
     </repositories>
-    
+ 
+    <pluginRepositories>
+        <pluginRepository>
+            <releases>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>central</id>
+            <name>Local Artifactory Plugins Releases</name>
+            <url>http://10.45.124.20:8081/artifactory/libs-release/</url>
+        </pluginRepository>
+    </pluginRepositories>   
     
     <profiles>
         <profile>
