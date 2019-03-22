@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>br.mp.mpu.escola</groupId>
     <artifactId>curso-deploy</artifactId>
-    <version>3.2.0</version>
+    <version>3.3.0</version>
     <packaging>war</packaging>
     <name>Deploy Automatizado</name>
     <description>Curso de deploy automatizado e padrões de qualidade</description>
